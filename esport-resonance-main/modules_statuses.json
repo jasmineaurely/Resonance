@@ -1,0 +1,9 @@
+{
+    "Testing": true,
+    "Role": true,
+    "User": true,
+    "News": true,
+    "Team": true,
+    "Broadcast": true,
+    "Match": true
+}
