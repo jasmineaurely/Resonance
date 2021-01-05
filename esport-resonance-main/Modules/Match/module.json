@@ -1,0 +1,13 @@
+{
+    "name": "Match",
+    "alias": "match",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Match\\Providers\\MatchServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
