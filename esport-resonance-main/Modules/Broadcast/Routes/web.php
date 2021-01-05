@@ -11,7 +11,7 @@
 |
 */
 
-Route::name('broadcast.')->middleware('auth')->prefix('admin/broadcast')->group(function() {
+Route::name('broadcast.')->middleware('auth', 'can:admin')->prefix('admin/broadcast')->group(function() {
     Route::get('/', 'BroadcastController@index')->name('index');
     Route::post('/', 'BroadcastController@index');
 });

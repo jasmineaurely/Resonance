@@ -29,12 +29,12 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #2B2B2B;">
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-dice-d6"></i>
             </div>
             <div class="sidebar-brand-text mx-3">{{ config('app.name', 'Laravel') }}</div>
         </a>
@@ -64,6 +64,8 @@
                 <span>{{ __('Profile') }}</span>
             </a>
         </li>
+
+        @can('admin')
 
         <!-- Nav Item -->
         <li class="nav-item {{ Nav::isRoute('user.index') }}">
@@ -98,12 +100,12 @@
         </li>
 
         <!-- Nav Item -->
-        <li class="nav-item {{ Nav::isRoute('team.member') }}">
+        {{-- <li class="nav-item {{ Nav::isRoute('team.member') }}">
             <a class="nav-link" href="{{ route('team.member') }}">
                 <i class="fas fa-fw fa-list"></i>
                 <span>{{ __('Team Members') }}</span>
             </a>
-        </li>
+        </li> --}}
 
         <!-- Nav Item -->
         <li class="nav-item {{ Nav::isRoute('broadcast.index') }}">
@@ -152,6 +154,65 @@
                 <span>{{ __('Finished Matches') }}</span>
             </a>
         </li>
+
+        <!-- Nav Item -->
+        <li class="nav-item {{ Nav::isRoute('store.category') }}">
+            <a class="nav-link" href="{{ route('store.category') }}">
+                <i class="fas fa-fw fa-shopping-cart"></i>
+                <span>{{ __('Merchandise Categories') }}</span>
+            </a>
+        </li>
+
+        <!-- Nav Item -->
+        <li class="nav-item {{ Nav::isRoute('store.index') }}">
+            <a class="nav-link" href="{{ route('store.index') }}">
+                <i class="fas fa-fw fa-shopping-cart"></i>
+                <span>{{ __('Merchandise') }}</span>
+            </a>
+        </li>
+
+        <!-- Nav Item -->
+        <li class="nav-item {{ Nav::isRoute('mycart.admin') }}">
+            <a class="nav-link" href="{{ route('mycart.admin') }}">
+                <i class="fas fa-fw fa-shopping-cart"></i>
+                <span>{{ __('Carts') }}</span>
+            </a>
+        </li>
+
+        <!-- Nav Item -->
+        <li class="nav-item {{ Nav::isRoute('mycart.methods') }}">
+            <a class="nav-link" href="{{ route('mycart.methods') }}">
+                <i class="fas fa-fw fa-dollar-sign"></i>
+                <span>{{ __('Payment Methods') }}</span>
+            </a>
+        </li>
+
+        <!-- Nav Item -->
+        <li class="nav-item {{ Nav::isRoute('mycart.confirmation') }}">
+            <a class="nav-link" href="{{ route('mycart.confirmation') }}">
+                <i class="fas fa-fw fa-dollar-sign"></i>
+                <span>{{ __('Payment Confirmation') }}</span>
+            </a>
+        </li>
+
+        @endcan
+
+        @can('member')
+        <!-- Nav Item -->
+        <li class="nav-item {{ Nav::isRoute('team.team') }}">
+            <a class="nav-link" href="{{ route('team.team') }}">
+                <i class="fas fa-fw fa-users"></i>
+                <span>{{ __('Team') }}</span>
+            </a>
+        </li>
+        <!-- Nav Item -->
+        <li class="nav-item {{ Nav::isRoute('mycart.index') }}">
+            <a class="nav-link" href="{{ route('mycart.index') }}">
+                <i class="fas fa-fw fa-shopping-cart"></i>
+                <span>{{ __('My Carts') }}</span>
+            </a>
+        </li>
+        @endcan
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">

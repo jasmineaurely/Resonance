@@ -11,7 +11,7 @@
 |
 */
 
-Route::name('news.')->middleware('auth')->prefix('admin/news')->group(function() {
+Route::name('news.')->middleware('auth', 'can:admin')->prefix('admin/news')->group(function() {
     Route::get('/', 'NewsController@index')->name('index');
     Route::post('/', 'NewsController@index');
     Route::get('/category', 'NewsController@category')->name('category');

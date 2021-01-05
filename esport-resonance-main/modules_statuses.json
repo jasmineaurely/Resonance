@@ -5,5 +5,8 @@
     "News": true,
     "Team": true,
     "Broadcast": true,
-    "Match": true
+    "Match": true,
+    "Homepage": true,
+    "Store": true,
+    "Cart": true
 }

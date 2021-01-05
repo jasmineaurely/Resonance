@@ -72,10 +72,11 @@ class BroadcastController extends Controller
         $crud->setSkin('bootstrap-v4');
         $crud->setFieldUpload('image', 'storage', '../storage');
         $crud->displayAs([
-            'role_id' => 'Role'
+            'role_id' => 'Role',
+            'youtube' => 'ID YouTube Video'
         ]);
         $crud->callbackColumn('youtube', function ($value, $row) {
-            return "<a href='$value' target='_blank'>Youtube</a>";
+            return "<a href='https://www.youtube.com/watch?v=$value' target='_blank'>$value</a>";
         });
         $crud->callbackColumn('image', function ($value, $row) {
             return "<img src='". asset('storage/'. $value) ."' height='75'>";
